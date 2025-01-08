@@ -61,6 +61,76 @@ Day-5
     console.log(d+name)
     console.log(name+c);
     console.log(b+/"hi"/+name)
+
+DAY-6
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var name="Venkata"
+        var  name="raja"
+        console.log(name)
+        document.write(name) 
+        let a=1
+        console.log(a)
+
+        var  b=2;
+        document.write(typeof (b));
+        document. write(b);
+        console.log(b)
+
+
+        let c=3.4;
+        document.write(typeof (c));
+        document.write(c);
+        console.log(c);
+
+        var d="venkata";
+        document.write(d)
+        console.log(d);
+        document.write(typeof(d));
+        console.log(typeof(d))
+
+    console.log(c+`hi`+d);
+    console.log(d+name)
+    console.log(name+c);
+    console.log(b+/"hi"/+name)
+
+    console.log(a+10);
+
+   b+=10
+   console.log(b);
+
+   b-=10;
+   console.log(b);
+
+   b/=4
+   console.log(b)
+
+   b%=2;
+   console.log(b)
+
+   console.log(a>b);
+   console.log(a==b);
+   console.log((a<b) && (a>b));
+    console.log((a<b) || (a>b));
+
+    let f=prompt()
+    let g=prompt()
+    console.log(f+g);
+    
+
+
+
+    </script>
+    
+</body>
+</html>
     
 
 
