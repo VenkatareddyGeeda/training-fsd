@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<<device-width>>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* let num1=parseInt(prompt("Enter a num1"));
+       if((num1%2==0) && (num1%3==0) ){
+            console.log(num1+"is divisible by 2 & 3");
+            document.write("divisible by 2 & 3");
+        }else{
+            console.log("none");
+        }*/
+
+
+       /* let num2=parseInt(prompt("Enter a num2"));
+        let num3=parseInt(prompt("Enter a num3"));
+        let num4=parseInt(prompt("Enter a num4"));
+        if((num2>num3) && (num2>num4)  ){
+            console.log("num2 is divsion");
+        }else if((num3>num2) && (num3>num4)){
+            console.log("num3 is large");
+
+        }else{
+            console.log("num4 is large")
+        }*/
+
+       /* let num5=parseInt(prompt("Enter number of working days"));
+        let num6=parseInt(prompt("Enter a  noOf adsent"));
+        let present=num5-num6;
+
+        let per = (present/num5)*100;
+        if(per>=75){
+            console.log("eligible for exam");
+        }else{
+            console.log("none")
+        }*/
+
+        let salary=parseInt(prompt("Enter a salary"));
+        let tp=parseInt(prompt("Enter a time period"));
+        if(tp>10){
+            console.log((salary*10)/100+salary);
+        }else if(tp>=6 && tp<=10){
+            console.log((salary*8)/100+salary)
+        }else if(tp<6){
+            console.log((salary*5)/100+salary)
+            
+        }
+
+
+    </script>
+
+</body>
+</html>
