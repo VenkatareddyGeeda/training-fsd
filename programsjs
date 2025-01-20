@@ -39,16 +39,39 @@
             console.log("none")
         }*/
 
-        let salary=parseInt(prompt("Enter a salary"));
+       /* let salary=parseInt(prompt("Enter a salary"));
         let tp=parseInt(prompt("Enter a time period"));
         if(tp>10){
-            console.log((salary*10)/100+salary);
+            console.log(((salary*10)/100)+salary);
         }else if(tp>=6 && tp<=10){
-            console.log((salary*8)/100+salary)
+            console.log(((salary*8)/100)+salary)
         }else if(tp<6){
-            console.log((salary*5)/100+salary)
+            console.log(((salary*5)/100)+salary)
             
+        }*/
+
+        for(let i=10;i<=15;i++){
+            console.log(i)
+            document.write(i+ "</br>")
+
         }
+
+        for(let j=2;j<=9;j=j+2){
+            console.log(j+3)  
+            <!--j=2:2+3=5;  j=5+2=7; j=7+2=9; j=9+2=11; j=11+2=15 -->
+        }
+
+        for(let k=1 ; k<=5;k++){
+            
+            document.write("chiru"+"</br>")
+        }
+        let m=9;
+
+        for(let l=1;l<=10;l++){
+            document.write("9*"+l+"="+m*l+ "</br>")
+        }
+
+        
 
 
     </script>
