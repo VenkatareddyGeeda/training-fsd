@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* function add(){
+            console.log(a+b);
+        }
+        let a=parseInt(prompt("Enter a num1"));
+        let b=parseInt(prompt("Enter a num2"))
+        add();
+
+
+        function greet(){
+            console.log("hi ramu")
+        }
+
+        greet()
+
+        function add1(num1,num2){
+            return num1+num2;
+        }
+        let c=parseInt(prompt("Enter a num1"));
+        let d=parseInt(prompt("Enter a num2"))
+        let result=add1(c,d);
+        console.log(result)*/
+
+
+        let num1=parseInt(prompt("Enter a num1"));
+        if(num1%2==0 ){
+            console.log("its is even");
+        }else{
+            console.log("not a even")
+        }
+     
+    </script>
+</body>
+</html>
