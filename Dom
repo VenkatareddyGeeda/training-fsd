@@ -218,6 +218,234 @@ delayedPromise
 </body>
 </html>
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* function add(){
+            console.log(a+b);
+        }
+        let a=parseInt(prompt("Enter a num1"));
+        let b=parseInt(prompt("Enter a num2"))
+        add();
+
+
+        function greet(){
+            console.log("hi ramu")
+        }
+
+        greet()
+
+        function add1(num1,num2){
+            return num1+num2;
+        }
+        let c=parseInt(prompt("Enter a num1"));
+        let d=parseInt(prompt("Enter a num2"))
+        let result=add1(c,d);
+        console.log(result)*/
+
+
+       /* let num1=parseInt(prompt("Enter a num1"));
+        if(num1%2==0 ){
+            console.log("its is even");
+        }else{
+            console.log("not a even")
+        }*/
+
+       /* let f=()=>{
+            console.log("hi rama")
+        }
+        f()
+
+        let x=(x,y)=>{
+            console.log(x+y)
+         }
+         x(30,20)
+         x(40,50)
+
+         let add=(a,b)=>{
+            console.log(a+b)
+         }
+         let num1=parseInt(prompt("Enter a num1"));
+         let num2=parseInt(prompt("Enter a num2"))
+         add(num1,num2)
+
+         let greet=x=>console.log(x);
+         greet("hello")
+
+         let age =parseInt(prompt("Enter a age"))
+         let agecheck=(age<18)?
+         ()=>console.log("vote"):
+         ()=>console.log("no vote")
+         agecheck()
+
+         console.log("water boiled");
+         setTimeout(()=>{
+            console.log("start cooking")
+         },5000);
+         console.log("cut the veg")
+
+         function greet1(name,callback){
+            console.log(`Hello,${name}!`)
+            callback();
+         }
+     function saygoodbye(){
+        console.log("GoodBye")
+     }
+     greet1("rama,sayGoodbye")*/
+/*
+     function mainfunction(callback){
+        console.log("Executing main function")
+        callback()
+     }
+     function callbackFunction(){
+        console.log('callbackfunction ex')
+     }
+     mainfunction(callbackFunction)
+
+     function greet2(name,callback){
+        console.log("hello"+name);
+        callback()
+     }
+     function goodbye(){
+        console.log("goodbye")
+     }
+     greet2("ram",goodbye)
+
+     function greet2(name,callback){
+        console.log("hello"+name);
+        callback()
+     }
+
+     greet2("ram",function(){
+        console.log("a good");
+     })
+*/
+/*
+let mypromise= new Promise((resolve,reject)=>{
+   let Success=true
+   if(Success){
+      resolve("The operation was successfully")
+   }else{
+      reject("The operation failed")
+   }
+})
+mypromise.then(result=>{
+   console.log(result)
+})
+.catch(error=>{
+   console.log(Error)
+
+})*/
+
+/*
+
+let promise=new Promise((reslove,reject)=>{
+   reslove(5);
+})
+promise.then(result=>{
+   console.log(result)
+   return result*2;
+})
+.then(result=>{
+   console.log(result)
+   return result+3;
+})
+   
+.then(result=>{
+   console.log(result)
+})
+.catch(error=>{
+   console.log("error",error)
+})*/
+
+/*
+let delayedPromise = new Promise((resolve, reject) => {
+   setTimeout(() => {
+       resolve("Promise resolved after 2 seconds");
+   }, 2000); 
+});
+
+delayedPromise
+   .then(result => {
+       console.log(result); 
+   })
+   .catch(error => {
+       console.log("Error:", error);
+   });*/
+
+
+</script>
+
+
+<!-- <h1>remove childnode</h1>
+<ul>
+   <li>ganesh</li>
+   <li>ravi</li>
+   <li>sam</li>
+</ul> -->
+<script>
+   /*
+   const ul=document.querySelector("ul")
+   const lists=document.querySelectorAll("li")
+   console.log(ul)
+   console.log(lists)
+
+   for(const list of lists){
+      console.log(`remove:${list.textContent}`)
+      ul.removeChild(list)
+      console.log(lists)
+      console.log(list)  
+ }*/
+
+</script>
+<div id="a">
+   <h1 id="c">ravi</h1>
+   <h1 id="r">ram</h1>
+</div>
+<div id="b">
+   <h2>sam</h2>
+   <h2>Venkata</h2>
+</div>
+
+<script>
+   /*
+   let n=document.createElement("h1")
+   n.textContent="Chiru"
+   let p=document.getElementById("a")
+   let l=document.getElementById("r")
+   p.insertBefore(n,l)
+
+   let m = document.createElement("h1")
+   m.textContent="Geeda"
+   let a=document.getElementById("a")
+   let b=document.getElementById("c")
+   a.insertBefore(m,b)*/
+</script>
+<script>
+   /*
+   let b=document.getElementById("a")
+   b.remove()*/
+   /*
+   let p=document.getElementById("a")
+   let a = document.getElementById("c")
+   console.log(a)
+   p.removeChild(a)*/
+   let n=document.createElement("h1")
+   n.textContent="Mallareddy university"
+   let p=document.getElementById("a")
+   p.replaceChildren(n)
+
+</script>
+</body>
+</html>
+
         
 
 
