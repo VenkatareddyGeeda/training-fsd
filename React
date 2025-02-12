@@ -134,3 +134,45 @@ const ThemeToggler=()=>{
 };
 export default  ThemeToggler;
 
+
+import ChildA from './ChildA.js';
+import ChildB from './ChildB.js';
+const App=()=>{
+    const[count,setCount]=useState(0);
+    const inc=()=>{
+        setCount(c=>c+1);
+    };
+    return(
+        <div>
+            <ChildA/>
+            <ChildB count={count} inc={inc} />
+        </div>
+    )
+    
+};
+export default App;
+
+import React from 'react';
+const ChildA=()=>{
+    console.log("Child A")
+    return(
+        <div>This is child A</div>
+    )
+    
+
+}
+export default ChildA;
+
+
+
+const ChildB=({count,inc})=>{
+    console.log("Child B render")
+    return(
+        <div>
+            <h1>Count:{count}</h1>
+            <button onClick={inc}>inc</button>
+        </div>
+    )
+}
+export default ChildB;
+
