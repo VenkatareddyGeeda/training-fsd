@@ -1,0 +1,148 @@
+// import React,{createContext,useContext} from 'react';
+import './App.css';
+// const Counter=()=>{
+// const[count,setCount]=useState(0)
+// return(
+//   <div class="name">
+//     <h1 >{count}</h1>
+//     <button onClick={()=>setCount(count+1)} class='name1'> inc</button>
+//     <button onClick={()=>setCount(count-1)} class='name1'>dec</button>
+//   </div>
+// );
+// }
+// export default Counter;
+// const ThemeToggler=()=>{
+//   const[theme,setTheme]=useState('light')
+//   const toggleTheme=()=>{
+//     setTheme(prevTheme=>(prevTheme==='ligth'?'dark':'ligth'))
+//   }
+//   return(
+//     <div style={{backgroundColor:theme==='ligth'?'white':'black',color:theme==='ligth'?'black':'white', textAlign:'center'}}>
+//       <h1>The current theme is{theme}</h1>
+//       <button onClick={toggleTheme}>toggletheme</button>
+//     </div>
+//   )
+// };
+// export default  ThemeToggler;
+// import ChildA from './ChildA.js';
+// import ChildB from './ChildB.js';
+// const App=()=>{
+//     const[count,setCount]=useState(0);
+//     const inc=()=>{
+//         setCount(c=>c+1);
+//     };
+//     return(
+//         <div>
+//             <ChildA/>
+//             <ChildB count={count} inc={inc} />
+//         </div>
+//     )
+    
+// };
+// export default App;
+// 
+import React, { createContext, useContext, useState } from "react";
+import "./App.css";
+
+// Create Context
+const UserContext = createContext();
+
+const App = () => {
+  const user = { name: "John Doe", email: "john@example.com" };
+  const [useContextAPI, setUseContextAPI] = useState(false);
+
+  return (
+    <div>
+      <h1>React Context vs Prop Drilling</h1>
+      <button onClick={() => setUseContextAPI(!useContextAPI)}>
+        {useContextAPI ? "Use Prop Drilling" : "Use React Context"}
+      </button>
+
+      {useContextAPI ? (
+        <UserContext.Provider value={user}>
+          <ParentUsingContext />
+        </UserContext.Provider>
+      ) : (
+        <ParentUsingProps user={user} />
+      )}
+    </div>
+  );
+};
+
+// ================== PROP DRILLING ==================
+const ParentUsingProps = ({ user }) => <ChildUsingProps user={user} />;
+const ChildUsingProps = ({ user }) => <ProfileUsingProps user={user} />;
+
+const ProfileUsingProps = ({ user }) => (
+  <div>
+    <h2>Profile (Prop Drilling)</h2>
+    <p>Name: {user.name}</p>
+    <p>Email: {user.email}</p>
+  </div>
+);
+
+// ================== REACT CONTEXT ==================
+const ParentUsingContext = () => <ChildUsingContext />;
+const ChildUsingContext = () => <ProfileUsingContext />;
+
+const ProfileUsingContext = () => {
+  const user = useContext(UserContext);
+  return (
+    <div>
+      <h2>Profile (React Context)</h2>
+      <p>Name: {user.name}</p>
+      <p>Email: {user.email}</p>
+    </div>
+  );
+};
+
+export default App;
+
+
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+div {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
