@@ -176,3 +176,75 @@ const ChildB=({count,inc})=>{
 }
 export default ChildB;
 
+
+
+ import React,{useState} from 'react';
+import './App.css';
+// const Counter=()=>{
+// const[count,setCount]=useState(0)
+// return(
+//   <div class="name">
+//     <h1 >{count}</h1>
+//     <button onClick={()=>setCount(count+1)} class='name1'> inc</button>
+//     <button onClick={()=>setCount(count-1)} class='name1'>dec</button>
+//   </div>
+// );
+// }
+// export default Counter;
+// const ThemeToggler=()=>{
+//   const[theme,setTheme]=useState('light')
+//   const toggleTheme=()=>{
+//     setTheme(prevTheme=>(prevTheme==='ligth'?'dark':'ligth'))
+//   }
+//   return(
+//     <div style={{backgroundColor:theme==='ligth'?'white':'black',color:theme==='ligth'?'black':'white', textAlign:'center'}}>
+//       <h1>The current theme is{theme}</h1>
+//       <button onClick={toggleTheme}>toggletheme</button>
+//     </div>
+//   )
+// };
+// export default  ThemeToggler;
+// import ChildA from './ChildA.js';
+// import ChildB from './ChildB.js';
+// const App=()=>{
+//     const[count,setCount]=useState(0);
+//     const inc=()=>{
+//         setCount(c=>c+1);
+//     };
+//     return(
+//         <div>
+//             <ChildA/>
+//             <ChildB count={count} inc={inc} />
+//         </div>
+//     )
+    
+// };
+// export default App;
+// 
+// 
+// function appleReducer(state=3,action){
+//   switch(action.type){
+//     case 'ADD_APPLE':
+//       return state+1;
+//     case 'eat apple':
+//       return state-1;
+//     default:
+
+//        return state;
+//   }
+// }
+// function App(){
+//   const[state,dispatch]=useReducer(appleReducer,3)
+//   return(
+//     <div>
+//       <h1>Apple Conter</h1>
+//       <p>No of apples:{state}</p>
+//       <img src="./image.png" alt="Apple"></img>
+//       <button onClick={()=>dispatch({type: 'ADD_APPLE'}) }>Add apple</button>
+//       <button onClick={()=>dispatch({type:'eat apple'})}>eat apple</button>
+//     </div>
+//   )
+// }
+// export default App;
+
+
