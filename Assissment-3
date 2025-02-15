@@ -1,0 +1,167 @@
+// ListContext.js - Context and Provider Component
+import React, { createContext, useReducer } from 'react';
+
+const ListContext = createContext();
+
+const listReducer = (state, action) => {
+    switch (action.type) {
+        case 'ADD_ITEM':
+            return [...state, { id: Date.now(), name: action.payload }];
+        case 'REMOVE_ITEM':
+            return state.filter(item => item.id !== action.payload);
+        default:
+            return state;
+    }
+};
+
+export const ListProvider = ({ children }) => {
+    const [list, dispatch] = useReducer(listReducer, []);
+
+    return (
+        <ListContext.Provider value={{ list, dispatch }}>
+            {children}
+        </ListContext.Provider>
+    );
+};
+
+export default ListContext;
+
+// AddItem.js - Component to Add a New Item
+import React, { useState, useContext } from 'react';
+import ListContext from './ListContext';
+
+const AddItem = () => {
+    const [input, setInput] = useState('');
+    const { dispatch } = useContext(ListContext);
+
+    const addItem = () => {
+        if (input.trim() !== '') {
+            dispatch({ type: 'ADD_ITEM', payload: input });
+            setInput('');
+        }
+    };
+
+    return (
+        <div>
+            <input 
+                type="text" 
+                value={input} 
+                onChange={(e) => setInput(e.target.value)} 
+                placeholder="Enter item"
+            />
+            <button onClick={addItem}>Add Item</button>
+        </div>
+    );
+};
+
+export default AddItem;
+
+// ItemList.js - Component to Display Items
+import React, { useContext, useMemo } from 'react';
+import ListContext from './ListContext';
+
+const ItemList = () => {
+    const { list, dispatch } = useContext(ListContext);
+
+    const renderedList = useMemo(() => {
+        return list.map(item => (
+            <li key={item.id}>
+                {item.name} <button onClick={() => dispatch({ type: 'REMOVE_ITEM', payload: item.id })}>Remove</button>
+            </li>
+        ));
+    }, [list]);
+
+    return (
+        <div>
+            <h2>Item List ({list.length})</h2>
+            <ul>{renderedList}</ul>
+        </div>
+    );
+};
+
+export default ItemList;
+
+// App.js - Main Component
+import React from 'react';
+import { ListProvider } from './ListContext';
+import AddItem from './AddItem';
+import ItemList from './ItemList';
+
+const App = () => {
+    return (
+        <ListProvider>
+            <h1>Item Management App</h1>
+            <AddItem />
+            <ItemList />
+        </ListProvider>
+    );
+};
+
+export default App;
+
+
+/* App.css - Styling for the Item Management App */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    padding: 10px;
+    margin: 5px auto;
+    width: 250px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li button {
+    background-color: #dc3545;
+}
+
+li button:hover {
+    background-color: #c82333;
+}
+
