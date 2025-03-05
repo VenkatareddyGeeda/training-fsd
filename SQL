@@ -1,0 +1,62 @@
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.34 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database ecommdb;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use ecommdb;
+Database changed
+mysql> create table mobiles(id int primary key,pname varchar(20),pcost double,pimage varchar(200),pqty int);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into mobiles values91,'mobile1',10000,'https://img.freepik.com/free-vector/realistic-front-view-smartphone-mockup-mobile-iphone-purple
+-frame-with-blank-white-display-vector_90220-959.jpg?ga=GA1.1.1610515764.1706663148&semt=ais_hybrid',10);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'values91,'mobile1',10000,'https://img.freepik.com/free-vector/realistic-front-vi' at line 1
+mysql> insert into mobiles values(1,'mobile1',10000,'https://img.freepik.com/free-vector/realistic-front-view-smartphone-mockup-mobile-iphone-purple-frame-with-blank-white-display-vector_90220-959.jpg?ga=GA1.1.1610515764.1706663148&semt=ais_hybrid',10);
+Query OK, 1 row affected (0.01 sec)                                                                                                                                                                                                                                                                     mysql> insert into mobiles values(1,'mobile1',10000,'https://www.freepik.com/free-photo/elegant-smartphone-composition_27375319.htm#fromView=keyword&page=1&position=1&uuid=2968f1f9-f5ec-45c9-a131-3f7811959a57&query=Mobile+Phones',10);\
+ERROR 1062 (23000): Duplicate entry '1' for key 'mobiles.PRIMARY'
+mysql> insert into mobiles values(2,'mobile2',10000,'https://www.freepik.com/free-photo/elegant-smartphone-composition_27375319.htm#fromView=keyword&page=1&position=1&uuid=2968f1f9-f5ec-45c9-a131-3f7811959a57&query=Mobile+Phones',10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mobiles values(3,'mobile3',10000,'https://www.freepik.com/premium-photo/gold-smartphones-new-technologies_6683190.htm#fromView=keyword&page=1&position=7&uuid=2968f1f9-f5ec-45c9-a131-3f7811959a57&query=Mobile+Phones',20);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mobiles values(4,'mobile4',50000,'https://www.freepik.com/free-photo/elegant-smartphone-composition_27375312.htm#fromView=keyword
+&page=1&position=12&uuid=2968f1f9-f5ec-45c9-a131-3f7811959a57&query=Mobile+Phones',11);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into mobiles values(5,'mobile5',30000,'https://www.freepik.com/free-vector/realistic-display-smartphone-with-different-apps_6208024.htm#fromView=keyword&page=1&position=17&uuid=2968f1f9-f5ec-45c9-a131-3f7811959a57&query=Mobile+Phones',50);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_ecommdb |
++-------------------+
+| mobiles           |
++-------------------+
+1 row in set (0.02 sec)
+
+mysql> select * from mobiles;
++----+---------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+
+| id | pname   | pcost | pimage
+                                                                        | pqty |
++----+---------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+
+|  1 | mobile1 | 10000 | https://img.freepik.com/free-vector/realistic-front-view-smartphone-mockup-mobile-iphone-purple-frame-with-blank-white-display-vector_90220-959.jpg?ga=GA1.1.1610515764.1706663148&semt=ais_hybrid |   10 |
+|  2 | mobile2 | 10000 | https://www.freepik.com/free-photo/elegant-smartphone-composition_27375319.htm#fromView=keyword&page=1&position=1&uuid=2968f1f9-f5ec-45c9-a131-3f7811959a57&query=Mobile+Phones                    |   10 |
+|  3 | mobile3 | 10000 | https://www.freepik.com/premium-photo/gold-smartphones-new-technologies_6683190.htm#fromView=keyword&page=1&position=7&uuid=2968f1f9-f5ec-45c9-a131-3f7811959a57&query=Mobile+Phones               |   20 |
+|  4 | mobile4 | 50000 | https://www.freepik.com/free-photo/elegant-smartphone-composition_27375312.htm#fromView=keyword&page=1&position=12&uuid=2968f1f9-f5ec-45c9-a131-3f7811959a57&query=Mobile+Phones                   |   11 |
+|  5 | mobile5 | 30000 | https://www.freepik.com/free-vector/realistic-display-smartphone-with-different-apps_6208024.htm#fromView=keyword&page=1&position=17&uuid=2968f1f9-f5ec-45c9-a131-3f7811959a57&query=Mobile+Phones |   50 |
++----+---------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+
+5 rows in set (0.00 sec)
+
+mysql>
