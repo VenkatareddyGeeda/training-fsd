@@ -65,3 +65,48 @@ public mobiles() {
 
 
 }
+
+
+package com.backend.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.backend.entity.mobiles;
+
+public interface BACKENDRepo extends JpaRepository<mobiles, java.lang.Integer> {
+
+}
+
+
+package com.backend.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.backend.repo.BACKENDRepo;
+
+@Service
+public class BackendService {
+	
+	@Autowired
+	
+	private BACKENDRepo repo;
+	
+	public List<mobiles> getAllmobiles(){
+		return repo.findAll()
+	}
+
+}
+
+
+package com.backend.controller;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin("*")
+
+public class BACKENDController {
+
+}
+
